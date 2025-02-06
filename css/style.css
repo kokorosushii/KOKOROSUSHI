@@ -1,310 +1,248 @@
-/* Reset and Global Styles */
+/* RESET DE ESTILOS PARA GARANTIR CONSISTÊNCIA */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
+/* CORPO GERAL */
 body {
-    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Cor de fundo escura */
+    color: #E0E0E0; /* Cor do texto clara para o modo escuro */
     line-height: 1.6;
-    color: #fff; /* Texto branco para melhor contraste no fundo preto */
-    background-color: #000000; /* Fundo preto global */
 }
 
-a {
+/* ESTILO DO HEADER */
+header {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+}
+
+header .titulo {
+    color: #FFD700;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+/* BARRA DE NAVEGAÇÃO FIXA */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    color: #FFD700;
+    text-align: center;
+    padding-left: 10px;
+}
+
+nav .menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav .menu a {
     text-decoration: none;
-    color: #007bff;
+    color: #E0E0E0;
+    margin: 0 20px;
+    font-size: 1.1em;
+    text-transform: uppercase;
     transition: color 0.3s ease;
 }
 
-a:hover {
-    color: #0056b3;
+nav .menu a:hover {
+    color: #FFD700;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Navigation */
-nav {
-    background-color: #111; /* Fundo escuro para a navegação */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 20px;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff; /* Logo branco para melhor contraste */
-}
-
-.menu {
-    display: flex;
-}
-
-.menu a {
-    margin-left: 20px;
-    color: #ccc; /* Cor clara para os links */
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.menu a:hover {
-    background-color: #333; /* Fundo mais escuro ao passar o mouse */
-    color: #fff;
-}
-
-/* Header */
-header {
-    background-image: url('path/to/your/sushi-image.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    text-align: center;
-    padding: 100px 0;
-}
-
-.titulo {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-/* Sections */
+/* SEÇÃO PRINCIPAL */
 section {
-    padding: 40px 20px;
-    background-color: #111; /* Fundo preto para as seções */
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-section h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #fff; /* Título branco para melhor contraste */
+    padding: 50px 20px 20px;
     text-align: center;
 }
 
-/* Mais Pedidos */
+/* MÁSCARA DE PEDIDOS */
+#mas-pedidos {
+    background-color: #181818;
+    padding: 40px 0;
+}
+
+#mas-pedidos h1 {
+    font-size: 2em;
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+#mas-pedidos p {
+    font-size: 1.1em;
+    color: #E0E0E0;
+    margin-bottom: 20px;
+}
+
+#mas-pedidos button {
+    background-color: #FFD700;
+    color: #121212;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#mas-pedidos button:hover {
+    background-color: #FFA500;
+}
+
 .fotodosmaspedidos {
-    background-color: #000; /* Fundo preto */
-    color: #fff; /* Texto branco */
-    padding: 20px;
-    border-radius: 8px;
-    display: flex; /* Flexbox para alinhar as imagens */
-    flex-wrap: wrap; /* Permite quebrar em várias linhas, se necessário */
-    gap: 20px; /* Espaçamento entre as imagens */
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 .foto {
-    width: calc(33.33% - 20px); /* Divide o espaço em 3 colunas com espaçamento */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Sombra clara para destacar */
-    transition: transform 0.3s ease;
-    background-color: #222; /* Fundo escuro para as fotos */
+    margin: 0 10px;
 }
 
-.foto:hover {
-    transform: scale(1.05);
+.foto img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-@media (max-width: 768px) {
-    .foto {
-        width: calc(50% - 20px); /* Duas imagens por linha em telas menores */
-    }
+/* SUGESTÕES DO DIA */
+#sugestao-do-dia {
+    background-color: #222;
+    padding: 40px 0;
 }
 
-@media (max-width: 480px) {
-    .foto {
-        width: 100%; /* Uma imagem por linha em telas muito pequenas */
-    }
+#sugestao-do-dia h1 {
+    font-size: 2.5em;
+    color: #FFD700;
+    margin-bottom: 20px;
 }
 
-/* Sugestão do Dia */
 .grupo-sugestao {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
 }
 
 .card-combo {
-    width: 30%;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Sombra clara para destacar */
+    background-color: #2C2C2C;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    background-color: #111; /* Fundo escuro para os cards */
 }
 
 .card-combo:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 .card-combo img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-}
-
-.card-combo div {
-    padding: 20px;
+    border-radius: 10px;
 }
 
 .card-combo span {
+    color: #FFD700;
+    font-size: 1.2em;
     font-weight: bold;
-    color: #fff; /* Texto branco para melhor contraste */
 }
 
-.card-combo p {
-    margin-top: 10px;
-    color: #ccc; /* Texto cinza claro */
+.card-combo .valor h3 {
+    font-size: 1.5em;
+    color: #FFD700;
 }
 
-.valor {
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
-}
-
-.valor h3 {
-    margin: 0;
-    color: #d00; /* Vermelho para destacar o preço */
-    font-size: 1.2rem;
-}
-
-.valor span {
+.card-combo .valor span {
     text-decoration: line-through;
-    color: #999; /* Cinza claro para o preço antigo */
-    margin-left: 10px;
+    color: #777;
 }
 
 .card-bts button {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #FFD700;
+    color: #121212;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    font-size: 1.1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .card-bts button:hover {
-    background-color: #0056b3;
+    background-color: #FFA500;
 }
 
-/* Promoção (Carrossel) */
-.carrossel {
-    position: relative;
-    overflow: hidden;
-    background-color: #000; /* Fundo preto para o carrossel */
-    color: #fff; /* Texto branco */
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.itens {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.itens > * {
-    min-width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.itens img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.anterior,
-.proximo {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.5); /* Fundo branco transparente */
-    color: #000; /* Ícones pretos */
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    z-index: 10;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-}
-
-.anterior:hover,
-.proximo:hover {
-    opacity: 1;
-}
-
-.anterior {
-    left: 10px;
-}
-
-.proximo {
-    right: 10px;
-}
-
-/* Footer */
+/* RODAPÉ */
 footer {
-    background-color: #ffffff; /* Fundo preto para o rodapé */
-    color: #fff; /* Texto branco */
-    padding: 40px 20px;
+    background-color: #181818;
     text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-    margin-top: 20px;
+    color: #E0E0E0;
+    padding: 20px 0;
 }
 
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS */
+@media screen and (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .menu a {
+        margin: 10px 0;
+        font-size: 1.2em;
+    }
+
+    .fotodosmaspedidos {
+        flex-direction: column;
+    }
+
+    .foto img {
+        width: 100%;
+        height: auto;
+    }
+
+    .grupo-sugestao {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-combo {
+        width: 90%;
+        margin: 15px 0;
+    }
 }
 
-footer .logo {
-    color: #fff;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-}
+@media screen and (max-width: 480px) {
+    header .titulo {
+        font-size: 2em;
+    }
 
-footer hr {
-    border-color: #555;
-    margin: 10px 0;
-    width: 80%;
-}
+    nav .logo {
+        font-size: 1.2em;
+    }
 
-footer h3 {
-    margin-bottom: 10px;
-    font-size: 1rem;
-}
+    .card-combo .valor h3 {
+        font-size: 1.3em;
+    }
 
-.rede-sosial {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    font-size: 1.5rem;
-}
-
-.rede-sosial i {
-    color: #fff;
-    transition: color 0.3s ease;
+    .card-combo .valor span {
+        font-size: 1em;
+    }
 }
